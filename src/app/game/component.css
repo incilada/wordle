@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.button {
+  margin: 5px;
+  height: 40px;
+}
+
+.width {
+  width: 48px;
+}
+
+.game-area {
+  flex: 1;
+}
+
+.keyboard .center {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

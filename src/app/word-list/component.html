@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="new-button">
+    <button nbButton status="primary" (click)="openNewWordWindow()">
+      + Ekle
+    </button>
+    <button
+      [disabled]="selectedWords.length === 0"
+      nbButton
+      status="primary"
+      (click)="deleteWords()"
+    >
+      - Seçilenleri Sil
+    </button>
+  </div>
+  <div class="word-list">
+    <div class="row" *ngFor="let word of (wordListService.wordList | async)">
+      <nb-checkbox
+        status="basic"
+        class="flex-grow"
+        (checkedChange)="selectWord($event, word)"
+      >
+        <span>{{word.title}}</span>
+      </nb-checkbox>
+      <button nbButton (click)="deleteWord(word)">
+        <nb-icon icon="trash"></nb-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="transmitting | async" class="overlay"></div>

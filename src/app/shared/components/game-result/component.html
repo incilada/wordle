@@ -1,0 +1,14 @@
+<div class="container">
+  <div *ngIf="status === GameStatus.Win">Tebrikler! Kazandınız.</div>
+  <div *ngIf="status === GameStatus.Loss">
+    Kazanamadınız. Kelime {{correctWord}}
+  </div>
+  <div class="actions">
+    <button class="input-item" nbButton status="success" (click)="newGame()">
+      Yeni Oyun
+    </button>
+    <button class="input-item" nbButton status="danger" (click)="close()">
+      Vazgeç
+    </button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <input class="input-item" nbInput [(ngModel)]="newWord" />
+  <div class="actions">
+    <button class="input-item" nbButton status="success" (click)="onSave()">
+      Kaydet
+    </button>
+    <button class="input-item" nbButton status="danger" (click)="close()">
+      Vazgeç
+    </button>
+  </div>
+</div>
