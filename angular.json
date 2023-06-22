@@ -8,6 +8,9 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -17,11 +20,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "pako",
+              "hammerjs",
+              "file-saver",
+              "lz-string",
+              "simple-crypto-js"
+            ],
             "outputPath": "dist/game-area",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -30,8 +41,6 @@
             "styles": [
               "node_modules/@nebular/theme/styles/prebuilt/dark.css",
               "node_modules/@nebular/theme/styles/prebuilt/default.css",
-              "node_modules/@nebular/theme/styles/prebuilt/corporate.css",
-              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -40,6 +49,13 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "./",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -60,6 +76,7 @@
               ],
               "outputHashing": "all"
             },
+
             "development": {
               "buildOptimizer": false,
               "optimization": false,

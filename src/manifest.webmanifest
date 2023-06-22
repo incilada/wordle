@@ -1,7 +1,7 @@
 {
-  "name": "game-area",
-  "short_name": "game-area",
-  "theme_color": "#1976d2",
+  "name": "Game Area",
+  "short_name": "Game Area",
+  "theme_color": "#151a30",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
