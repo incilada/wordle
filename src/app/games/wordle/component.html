@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="header">
+    <h3>Game Area</h3>
+  </div>
+  <div *ngIf="!gameService?.word" class="buttons">
+    <button
+      class="button"
+      nbButton
+      [status]="gameService.level === Level.Easy ? 'success' : 'info'"
+      (click)="gameService.changeLevel(Level.Easy)"
+    >
+      Kolay
+    </button>
+    <button
+      class="button"
+      nbButton
+      [status]="gameService.level === Level.Middle ? 'success' : 'info'"
+      (click)="gameService.changeLevel(Level.Middle)"
+    >
+      Orta
+    </button>
+    <button
+      class="button"
+      nbButton
+      [status]="gameService.level === Level.Hard ? 'success' : 'info'"
+      (click)="gameService.changeLevel(Level.Hard)"
+    >
+      Zor
+    </button>
+    <button
+      [disabled]="!gameService.level"
+      class="button"
+      nbButton
+      [status]="'primary'"
+      (click)="startGame()"
+    >
+      Başla
+    </button>
+  </div>
+
+  <div *ngIf="gameService?.word &&gameService.predictions " class="game-area">
+    <div class="rows" *ngFor="let prediction of gameService.predictions">
+      <ng-container *ngIf="prediction.isVisible">
+        <div class="buttons">
+          <button
+            class="button width"
+            nbButton
+            [disabled]="(gameService.checking | async) && prediction.isActive"
+            *ngFor="let letter of prediction.letters"
+            [status]="letter.status"
+          >
+            {{letter.guess}}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div *ngIf="gameService?.word" class="keyboard">
+    <div class="buttons center">
+      <button
+        class="button width"
+        nbButton
+        [outline]="letter.status === 'basic'"
+        *ngFor="let letter of gameService?.keyboardItems"
+        [status]="letter.status"
+        (click)="onKeyboardItemClicked(letter)"
+      >
+        {{letter.item}}
+      </button>
+    </div>
+  </div>
+</div>

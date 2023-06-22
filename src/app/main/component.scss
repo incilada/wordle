@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+
+  .button {
+    height: 30px;
+    background-color: #222b45;
+    border-color: #222b45;
+    color: #e2e2e2;
+    text-transform: capitalize;
+  }
+
+  .content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .top-panel {
+      display: flex;
+      justify-content: space-between;
+
+      .left-panel {
+        display: flex;
+        gap: 5px;
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50px 0 10px;
+
+      .logo-size {
+        height: 110px;
+        width: 310px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0 10px;
+    flex: 1;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+      width: 100px;
+      border: 1px solid #101426;
+      border-top: 4px solid #0095ff;
+      border-radius: 0.25rem;
+      background-color: #222b45;
+      margin-bottom: 1.875rem;
+      box-shadow: 7px 18px 32px -18px rgba(0, 0, 0, 0.77);
+
+      .card-header {
+        text-align: center;
+        padding: 5px;
+        border-bottom: 1px solid #151a30;
+      }
+
+      .card-body {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        .icon-size {
+          display: flex;
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    gap: 10px;
+  }
+}

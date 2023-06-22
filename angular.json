@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wordle": {
+    "game-area": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wordle",
+            "outputPath": "dist/game-area",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,8 +28,11 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css",
               "node_modules/@nebular/theme/styles/prebuilt/default.css",
-              "src/styles.css"
+              "node_modules/@nebular/theme/styles/prebuilt/corporate.css",
+              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "serviceWorker": true,
@@ -68,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "wordle:build:production"
+              "browserTarget": "game-area:build:production"
             },
             "development": {
-              "browserTarget": "wordle:build:development"
+              "browserTarget": "game-area:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wordle:build"
+            "browserTarget": "game-area:build"
           }
         },
         "test": {
@@ -94,7 +101,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.css"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }

@@ -1,15 +1,5 @@
 <nb-layout>
-  <nb-layout-header fixed>
-    <nb-actions class="left">
-      <nb-action *ngFor="let menuItem of menuItems">
-        <a [routerLink]="menuItem.link">{{ menuItem.title }}</a>
-      </nb-action>
-    </nb-actions>
-  </nb-layout-header>
-
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>
-
-  <nb-layout-footer fixed> Test </nb-layout-footer>
 </nb-layout>

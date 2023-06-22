@@ -6,13 +6,13 @@ import { WordListService } from './shared/services/word-list';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   menuItems: NbMenuItem[] = [];
   contextMenuPlacement = NbPosition.BOTTOM;
-  title = 'wordle';
+  title = 'game-area';
   constructor(private wordList: WordListService) {}
   ngOnInit(): void {
     this.menuItems = new MenuFactory().create();

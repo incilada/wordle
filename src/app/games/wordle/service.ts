@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WordListService } from '../shared/services/word-list';
+import { WordListService } from '../../shared/services/word-list';
 import { Level } from './level';
 import * as _ from 'underscore';
 import {
@@ -9,10 +9,10 @@ import {
   GameStatus,
   Keyboard,
   KeyboardStatus,
-} from '../shared/services/model';
+} from '../../shared/services/model';
 import { BehaviorSubject, timer } from 'rxjs';
-import { isPresent } from '../shared/common';
-import { LetterListFactory } from '../shared/services/letter-list';
+import { isPresent } from '../../shared/common';
+import { LetterListFactory } from '../../shared/services/letter-list';
 
 @Injectable()
 export class GameService {

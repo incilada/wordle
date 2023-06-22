@@ -10,7 +10,7 @@ import { GameStatus } from '../../services/model';
 @Component({
   selector: 'app-game-result',
   templateUrl: './component.html',
-  styleUrls: ['./component.css'],
+  styleUrls: ['./component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameResultComponent implements OnInit {

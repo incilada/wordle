@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/component';
 import { SettingsComponent } from './settings/component';
 import { AboutComponent } from './about/component';
-import { GameComponent } from './game/component';
 import { WordListComponent } from './word-list/component';
+import { WordleComponent } from './games/wordle/component';
 
 export enum Path {
   Home = 'home',
   Settings = 'settings',
   About = 'about',
-  Game = 'new-game',
   WordList = 'word-list',
 }
 
@@ -26,10 +25,6 @@ const routes: Routes = [
   {
     path: Path.About,
     component: AboutComponent,
-  },
-  {
-    path: Path.Game,
-    component: GameComponent,
   },
   {
     path: Path.WordList,

@@ -1,22 +1,18 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import {
-  NbActionsModule,
-  NbButtonModule,
   NbContextMenuModule,
   NbLayoutModule,
   NbMenuModule,
-  NbSidebarModule,
   NbSidebarService,
   NbThemeModule,
   NbWindowModule,
   NbWindowService,
 } from '@nebular/theme';
 import { AboutModule } from './about/module';
-import { GameModule } from './game/module';
 import { HomeModule } from './home/module';
 import { SettingsModule } from './settings/module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -26,24 +22,29 @@ import { WordListModule } from './word-list/module';
 import { HttpService } from './shared/services/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from 'src/environments/environment';
+import { GlobalConstantsToken } from './shared/token';
+import { GlobalConstants } from './shared/global-constants';
+import { GamesModule } from './games/module';
+import { GameModule } from './game/module';
+import { MainModule } from './main/module';
+import { GameService } from './shared/services/game';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     HttpClientModule,
     AboutModule,
     WordListModule,
-    GameModule,
+    GamesModule,
     HomeModule,
+    GameModule,
+    MainModule,
     SettingsModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({ name: 'dark' }),
     NbWindowModule.forRoot(),
-    NbSidebarModule.forRoot(),
     NbLayoutModule,
-    NbButtonModule,
-    NbActionsModule,
     NbMenuModule.forRoot(),
     NbContextMenuModule,
     NbEvaIconsModule,
@@ -51,7 +52,14 @@ import { environment } from 'src/environments/environment';
       enabled: environment.production,
     }),
   ],
-  providers: [HttpService, NbSidebarService, WordListService, NbWindowService],
+  providers: [
+    { provide: GlobalConstantsToken, useClass: GlobalConstants },
+    HttpService,
+    NbSidebarService,
+    WordListService,
+    NbWindowService,
+    GameService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

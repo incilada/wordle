@@ -7,7 +7,7 @@ import { RandomHelper } from '../../helper/random';
 @Component({
   selector: 'app-new-word',
   templateUrl: './component.html',
-  styleUrls: ['./component.css'],
+  styleUrls: ['./component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewWordComponent implements OnInit {

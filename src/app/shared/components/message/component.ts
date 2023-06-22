@@ -9,7 +9,7 @@ import * as _ from 'underscore';
 @Component({
   selector: 'app-message',
   templateUrl: './component.html',
-  styleUrls: ['./component.css'],
+  styleUrls: ['./component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageComponent implements OnInit {

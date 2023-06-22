@@ -1,5 +1,2 @@
-<p>
-  <button nbButton status="primary" (click)="redirectToNewGame()">
-    + Yeni Oyun
-  </button>
-</p>
+<app-game *ngIf="gameService.selectedGame | async"></app-game>
+<app-main *ngIf="!(gameService.selectedGame | async)"></app-main>

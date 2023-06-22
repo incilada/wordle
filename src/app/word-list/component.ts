@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-word-list',
   templateUrl: './component.html',
-  styleUrls: ['./component.css'],
+  styleUrls: ['./component.scss'],
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

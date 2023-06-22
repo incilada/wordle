@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="content">
+    <div class="top-panel">
+      <div class="left-panel">
+        <button nbButton class="button">
+          <nb-icon icon="settings"></nb-icon>
+        </button>
+        <button nbButton class="button">
+          <nb-icon icon="settings"></nb-icon>
+        </button>
+      </div>
+      <div class="right-panel">
+        <button nbButton class="button">
+          <nb-icon icon="settings"></nb-icon>
+        </button>
+      </div>
+    </div>
+    <div class="logo">
+      <div class="app-logo logo-size"></div>
+    </div>
+    <div class="game-list">
+      <div *ngFor="let game of gameList" class="card" (click)="openGame(game)">
+        <div class="card-body">
+          <span [ngClass]="game.iconClass" class="icon-size"></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button nbButton class="button">
+        <nb-icon icon="settings"></nb-icon>
+        <span>Ayarlar</span>
+      </button>
+      <button nbButton class="button">
+        <span>Hakkında</span>
+      </button>
+    </div>
+  </div>
+</div>
