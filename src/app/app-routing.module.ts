@@ -4,7 +4,7 @@ import { HomeComponent } from './home/component';
 import { SettingsComponent } from './settings/component';
 import { AboutComponent } from './about/component';
 import { WordListComponent } from './word-list/component';
-import { WordleComponent } from './games/wordle/component';
+import { LoginComponent } from './authentication/login/component';
 
 export enum Path {
   Home = 'home',
@@ -35,6 +35,8 @@ const routes: Routes = [
     redirectTo: '/',
     pathMatch: 'prefix',
   },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

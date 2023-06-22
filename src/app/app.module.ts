@@ -28,6 +28,7 @@ import { GamesModule } from './games/module';
 import { GameModule } from './game/module';
 import { MainModule } from './main/module';
 import { GameService } from './shared/services/game';
+import { AuthenticationModule } from './authentication/module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -39,6 +40,7 @@ import { GameService } from './shared/services/game';
     GameModule,
     MainModule,
     SettingsModule,
+    AuthenticationModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
