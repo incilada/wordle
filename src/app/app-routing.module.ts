@@ -36,7 +36,6 @@ const routes: Routes = [
     pathMatch: 'prefix',
   },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
