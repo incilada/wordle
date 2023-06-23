@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/',
+    redirectTo: '/home',
     pathMatch: 'prefix',
   },
   { path: 'login', component: LoginComponent },

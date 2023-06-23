@@ -1,8 +1,5 @@
 <div class="container">
-  <div class="header">
-    <h3>Game Area</h3>
-  </div>
-  <div *ngIf="!gameService?.word" class="buttons">
+  <div *ngIf="!gameService?.word" class="started-buttons">
     <button
       class="button"
       nbButton
@@ -29,7 +26,7 @@
     </button>
     <button
       [disabled]="!gameService.level"
-      class="button"
+      class="button margin-top"
       nbButton
       [status]="'primary'"
       (click)="startGame()"

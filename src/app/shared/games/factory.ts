@@ -4,6 +4,11 @@ export class GameFactory {
   create(): Game[] {
     const games = [];
     games.push(this.createWordle());
+    games.push(this.createWordle());
+    games.push(this.createWordle());
+    games.push(this.createWordle());
+    games.push(this.createWordle());
+    games.push(this.createWordle());
     return games;
   }
 

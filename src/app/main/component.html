@@ -15,16 +15,23 @@
         </button>
       </div>
     </div>
-    <div class="logo">
-      <div class="app-logo logo-size"></div>
-    </div>
-    <div class="game-list">
-      <div *ngFor="let game of gameList" class="card" (click)="openGame(game)">
-        <div class="card-body">
-          <span [ngClass]="game.iconClass" class="icon-size"></span>
+    <div class="center-panel">
+      <div class="logo">
+        <div class="app-logo logo-size"></div>
+      </div>
+      <div class="game-list">
+        <div
+          *ngFor="let game of gameList"
+          class="card"
+          (click)="openGame(game)"
+        >
+          <div class="card-body">
+            <span [ngClass]="game.iconClass" class="icon-size"></span>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="footer">
       <button nbButton class="button">
         <nb-icon icon="settings"></nb-icon>
