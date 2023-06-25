@@ -1,2 +1,5 @@
-<app-game *ngIf="gameService.selectedGame | async"></app-game>
-<app-main *ngIf="!(gameService.selectedGame | async)"></app-main>
+<div class="container">
+  <app-game *ngIf="gameService.selectedGame | async"></app-game>
+
+  <app-main *ngIf="!(gameService.selectedGame | async)"></app-main>
+</div>

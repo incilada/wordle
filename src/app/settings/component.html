@@ -1,1 +1,25 @@
-<p>settings works!</p>
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="row-item">
+        <span>Tema</span>
+      </div>
+      <div class="row-item">
+        <button
+          nbButton
+          (click)="changeTheme('dark')"
+          [status]="selectedTheme === 'dark' ? 'primary' : ''"
+        >
+          Koyu
+        </button>
+        <button
+          nbButton
+          (click)="changeTheme('default')"
+          [status]="selectedTheme === 'default' ? 'primary' : ''"
+        >
+          Açık
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

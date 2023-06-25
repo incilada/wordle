@@ -6,7 +6,7 @@
       [status]="gameService.level === Level.Easy ? 'success' : 'info'"
       (click)="gameService.changeLevel(Level.Easy)"
     >
-      Kolay
+      Kolay (4 Harf)
     </button>
     <button
       class="button"
@@ -14,7 +14,7 @@
       [status]="gameService.level === Level.Middle ? 'success' : 'info'"
       (click)="gameService.changeLevel(Level.Middle)"
     >
-      Orta
+      Orta (5 Harf)
     </button>
     <button
       class="button"
@@ -22,7 +22,7 @@
       [status]="gameService.level === Level.Hard ? 'success' : 'info'"
       (click)="gameService.changeLevel(Level.Hard)"
     >
-      Zor
+      Zor (6 Harf)
     </button>
     <button
       [disabled]="!gameService.level"
